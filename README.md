@@ -3,6 +3,7 @@ OrderAPI is a RESTful api that used to create orders and update exist orders in 
 
 ## (1)create an order
 POST - http:localhost:8081/addOrder
+
 Request body:
 ```java
 { 
@@ -18,7 +19,6 @@ Request body:
 
 
 Response:
-
 ```java
 {
     "id": 1,
@@ -35,6 +35,7 @@ Response:
 
 ## Update an order
 PUT - http:localhost:8081/updateOrder/{id}
+
 Request body:
 ```java
 {
@@ -58,6 +59,7 @@ Request body:
     ]
 }
 ```
+
 Response:
 ```java 
 {
