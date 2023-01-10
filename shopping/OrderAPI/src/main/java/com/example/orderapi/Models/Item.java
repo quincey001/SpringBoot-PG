@@ -3,22 +3,27 @@ package com.example.orderapi.Models;
 import jakarta.persistence.*;
 
 @Entity
-public class Items {
+public class Item {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
     private double unitPrice;
     private int quantity;
 
-    public Items(){
+    public Item(){
 
+    }
+    public Item(String name, double unitPrice, int quantity){
+        this.name  = name;
+        this.unitPrice = unitPrice;
+        this.quantity = quantity;
     }
     public void setId(int id) {
         this.id = id;
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 

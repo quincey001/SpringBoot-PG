@@ -44,6 +44,7 @@ public class ApiControllers {
     public ResponseEntity<ResponseOrder> placeOrder(@RequestBody OrderDTO orderDTO){
         logger.info("Request Payload" + orderDTO.toString());
         ResponseOrder responseOrder = new ResponseOrder();
+
         float amount = orderService.getCartAmount(orderDTO.getCartItems());
         // check if the customer exist in the database
         Customer customer = new Customer(orderDTO.getCustomerName(), orderDTO.getCustomerEmail());
@@ -56,6 +57,7 @@ public class ApiControllers {
             customer = customerService.saveCustomer(customer);
             logger.info("customer saved with id :" + customer.getId());
         }
+
         Order order = new Order(orderDTO.getOrderDescription(), customer, orderDTO.getCartItems());
         order = orderService.saveOrder(order);
         logger.info("order processed successfully...");

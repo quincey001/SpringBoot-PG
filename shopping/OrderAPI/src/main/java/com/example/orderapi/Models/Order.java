@@ -4,26 +4,24 @@ import jakarta.persistence.*;
 
 import java.util.List;
 @Entity
+@Table(name = "myOder")
 public class Order{
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private long totalPrice;
-    @OneToMany
-    List<Items> orderItems;
+    private double totalAmount;
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, targetEntity = Item.class)
+    List<Item> items;
     public Order(){
 
     }
-    public Order(int id, long totalPrice, List<Items> orderItems){
-        this.id = id;
-        this.totalPrice = totalPrice;
-        this.orderItems = orderItems;
-        for(Items item : orderItems){
-            this.totalPrice += item.getQuantity()*item.getQuantity();
-        }
+
+    public Order(double totalAmount, List<Item> items) {
+        this.totalAmount = totalAmount;
+        this.items = items;
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
@@ -31,19 +29,18 @@ public class Order{
         this.id = id;
     }
 
-    public long getTotalPrice() {
-        return totalPrice;
+    public double getTotalAmount() {
+        return totalAmount;
     }
 
-    public void setTotalPrice(long totalPrice) {
-        this.totalPrice =  totalPrice;
+    public void setTotalAmount(double totalAmount) {
+        this.totalAmount = totalAmount;
+    }
+    public List<Item> getItems() {
+        return items;
     }
 
-    public List<Items> getOrderItems() {
-        return orderItems;
-    }
-
-    public void setOrderItems(List<Items> orderItems) {
-        this.orderItems = orderItems;
+    public void setItems(List<Item> items) {
+        this.items = items;
     }
 }
