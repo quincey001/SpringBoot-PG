@@ -24,7 +24,6 @@ public class ApiControllers {
 
     private Logger logger = LoggerFactory.getLogger(ApiControllers.class);
 
-    //create an item
     @PostMapping(value = "/addOrder")
     public ResponseEntity<ResponseOrder> addOrder(@RequestBody CreateOrderRequest request){
         ResponseOrder responseOrder = orderService.createOrder(request);

@@ -9,8 +9,6 @@ import com.example.orderapi.Payloads.responses.ResponseItem;
 import com.example.orderapi.Payloads.responses.ResponseOrder;
 import com.example.orderapi.Repo.OrderRepository;
 import org.springframework.stereotype.Service;
-
-import java.net.SocketException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
