@@ -1,9 +1,10 @@
 # SpringBoot-PG
 OrderAPI is a RESTful api that used to create orders and update exist orders in MySQL database.
 
-##(1)create an order
+## (1)create an order
 POST - http:localhost:8081/addOrder
 Request body:
+```java
 { 
     "items": [
         {  
@@ -13,8 +14,12 @@ Request body:
         } 
     ]
 }
+```
+
 
 Response:
+
+```java
 {
     "id": 1,
     "totalAmount": 60.0,
@@ -26,10 +31,12 @@ Response:
         }
     ]
 }
+```
 
-##Update an order
+## Update an order
 PUT - http:localhost:8081/updateOrder/{id}
 Request body:
+```java
 {
     "id": 1,
     "items": [
@@ -50,8 +57,9 @@ Request body:
         }
     ]
 }
-
+```
 Response:
+```java 
 {
     "id": 1,
     "totalAmount": 2638.0,
@@ -73,4 +81,5 @@ Response:
         }
     ]
 }
+```
 
