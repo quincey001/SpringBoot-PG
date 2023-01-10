@@ -1,9 +1,12 @@
 package com.example.orderapi.Models;
 
 import jakarta.persistence.*;
+import lombok.Builder;
+import lombok.experimental.SuperBuilder;
 
 import java.util.List;
 @Entity
+@SuperBuilder
 @Table(name = "myOder")
 public class Order{
     @Id

@@ -1,8 +1,11 @@
 package com.example.orderapi.Models;
 
 import jakarta.persistence.*;
+import lombok.Builder;
+import lombok.experimental.SuperBuilder;
 
 @Entity
+@SuperBuilder
 public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
