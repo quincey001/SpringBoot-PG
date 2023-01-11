@@ -14,6 +14,14 @@ implementation 'io.springfox:springfox-swagger2:2.9.2'
 implementation 'io.springfox:springfox-swagger-ui:2.9.2'
 testImplementation 'org.mockito:mockito-core:4.11.0'
  ```  
+ 
+### Spring web: makes your project a web application, The spring-boot-starter-web dependency transitively pull 
+in all dependencies related to web development. It uses Spring MVC, REST, and tomcat as a default embedded server.
+
+### Spring data JPA: allows us to persist data in SQL databases using Spring Data and Hibernate, which is an implementation of the JPA.
+
+### MySQL Driver: it is a dependency that connects the MySQL database to spring boot application.
+
 OrderAPI is a RESTful api that used to create orders and update exist orders in MySQL database.
 
 ## (1)create an order
